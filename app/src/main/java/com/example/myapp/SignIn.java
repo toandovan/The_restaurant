@@ -1,6 +1,7 @@
 package com.example.myapp;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -21,15 +22,26 @@ import com.google.firebase.database.ValueEventListener;
 import com.rey.material.widget.CheckBox;
 
 import io.paperdb.Paper;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SignIn extends AppCompatActivity {
     EditText edtPhone,edtPass;
     Button btnSignIn;
     CheckBox ckbRemember;
 
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/restaurant_font.otf")
+                .setFontAttrId(R.attr.fontPath)
+                .build());
         setContentView(R.layout.activity_sign_in);
 
         edtPass = (EditText) findViewById(R.id.edtPass);
@@ -58,7 +70,7 @@ public class SignIn extends AppCompatActivity {
 
 
                     final ProgressDialog mDialog = new ProgressDialog(SignIn.this);
-                    mDialog.setMessage("please waiting...");
+                    mDialog.setMessage("Hệ thống đang xủ lí...");
                     mDialog.show();
 
 
@@ -68,7 +80,7 @@ public class SignIn extends AppCompatActivity {
 
                             if (edtPass.getText().toString().isEmpty() && edtPhone.getText().toString().isEmpty()) {
                                 mDialog.dismiss();
-                                Toast.makeText(SignIn.this, "empty", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignIn.this, "Nội dung bị bỏ trống !", Toast.LENGTH_SHORT).show();
                             }
                             else {
                                 mDialog.dismiss();
@@ -83,11 +95,11 @@ public class SignIn extends AppCompatActivity {
                                         finish();
 
                                     } else {
-                                        Toast.makeText(SignIn.this, "failed", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(SignIn.this, "Đăng nhập Thất bại", Toast.LENGTH_SHORT).show();
                                     }
                                 } else {
                                     mDialog.dismiss();
-                                    Toast.makeText(SignIn.this, "not exist", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(SignIn.this, "Tài khoản không tồn tại", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }
@@ -99,7 +111,7 @@ public class SignIn extends AppCompatActivity {
                     });
                 }
                 else{
-                    Toast.makeText(SignIn.this,"Please check your connection!",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignIn.this,"Sự cố, Kiểm tra lại đường truyền!",Toast.LENGTH_SHORT).show();
                     return;
                 }
             }

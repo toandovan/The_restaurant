@@ -1,6 +1,7 @@
 package com.example.myapp;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
@@ -28,15 +29,27 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import io.paperdb.Paper;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 
 public class MainActivity extends AppCompatActivity{
 
-    Button btnSignIn,btnSignUp;
+    Button btnSignIn,btnSignUp,btnDK;
     TextView txtSlogan;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/restaurant_font.otf")
+                .setFontAttrId(R.attr.fontPath)
+                .build());
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
 
@@ -45,7 +58,7 @@ public class MainActivity extends AppCompatActivity{
 
       btnSignIn =(Button)findViewById(R.id.btnSignIn);
        btnSignUp=(Button)findViewById(R.id.btnSignUp);
-
+        btnDK=(Button)findViewById(R.id.btnDK);
        txtSlogan=(TextView)findViewById(R.id.txtSlogan);
 
         Paper.init(this);
@@ -62,6 +75,14 @@ public class MainActivity extends AppCompatActivity{
             public void onClick(View v) {
                 Intent signUp=new Intent(MainActivity.this,SignUp.class);
                 startActivity(signUp);
+            }
+        });
+
+        btnDK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent reference=new Intent(MainActivity.this,Reference.class);
+                startActivity(reference);
             }
         });
 
@@ -101,7 +122,7 @@ public class MainActivity extends AppCompatActivity{
 
 
             final ProgressDialog mDialog = new ProgressDialog(MainActivity.this);
-            mDialog.setMessage("please waiting...");
+            mDialog.setMessage("Hệ thống đang xử lí...");
             mDialog.show();
             table_user.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -130,7 +151,7 @@ public class MainActivity extends AppCompatActivity{
             });
         }
         else{
-            Toast.makeText(MainActivity.this,"Please check your connection!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this,"Sự cố, Kiểm tra lại đường truyền!",Toast.LENGTH_SHORT).show();
             return;
         }
     }

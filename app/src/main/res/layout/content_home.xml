@@ -9,12 +9,33 @@
     tools:context=".Home"
     tools:showIn="@layout/app_bar_home">
 
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.daimajia.slider.library.SliderLayout
+        android:id="@+id/slider"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <TextView
+            android:text="MÓN ĂN NỔI BẬT"
+            android:textSize="20sp"
+            android:textColor="@color/colorText"
+            android:gravity="center"
+            android:layout_alignParentTop="true"
+            android:background="#4f0e0d0e"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.daimajia.slider.library.SliderLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_menu"
         android:scrollbars="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
+</LinearLayout>
 
 </android.support.v4.widget.SwipeRefreshLayout>

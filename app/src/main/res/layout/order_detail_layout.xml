@@ -33,7 +33,7 @@
                 android:layout_gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="bold"
-                android:text="product name"
+                android:text="Tên món ăn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -44,7 +44,7 @@
                 android:layout_gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="italic"
-                android:text="quantity"
+                android:text="Số lượng"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -56,7 +56,7 @@
                 android:layout_gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="italic"
-                android:text="price"
+                android:text="Giá"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
@@ -67,7 +67,7 @@
                 android:layout_gravity="center_vertical|start"
                 android:textAllCaps="true"
                 android:textStyle="italic"
-                android:text="discount"
+                android:text="Giảm giá"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 

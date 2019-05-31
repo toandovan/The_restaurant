@@ -10,9 +10,8 @@ import com.example.myapp.Interface.ItemClickListener;
 import com.example.myapp.R;
 
 public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    public TextView food_name,food_price;
+    public TextView food_name;
     public ImageView food_image,quick_cart,share_image;
-
 
     private ItemClickListener itemClickListener;
 
@@ -28,7 +27,7 @@ public class FoodViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         food_image=(ImageView)itemView.findViewById(R.id.food_image);
         quick_cart=(ImageView)itemView.findViewById(R.id.btn_quick_cart);
         share_image=(ImageView)itemView.findViewById(R.id.btn_share);
-        food_price=(TextView)itemView.findViewById(R.id.food_price);
+
         itemView.setOnClickListener(this);
 
     }

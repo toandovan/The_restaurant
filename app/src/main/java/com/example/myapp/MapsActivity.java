@@ -8,20 +8,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private static final LatLng PERTH = new LatLng(-31.952854, 115.857342);
-    private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
-    private static final LatLng BRISBANE = new LatLng(-27.47093, 153.0235);
-
-
-    private Marker mPerth;
-    private Marker mSydney;
-    private Marker mBrisbane;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +39,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng restaurant = new LatLng(10.8755, 106.80558);
+        mMap.addMarker(new MarkerOptions().position(restaurant).title("Marker in restaurant"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(restaurant));
+        mMap.animateCamera( CameraUpdateFactory.zoomTo( 15.0f ) );
     }
 }

@@ -92,5 +92,11 @@ public class Database extends SQLiteAssetHelper {
         String query = String.format("UPDATE OrderDetail SET Quantity= %s WHERE ID=%d",order.getQuantity(),order.getID());
       db.execSQL(query);
     }
+
+    public void removeFromCart(String productId, String phone) {
+        SQLiteDatabase db=getReadableDatabase();
+        String query=String.format("DELETE FROM OrderDetail");
+        db.execSQL(query);
+    }
 }
 

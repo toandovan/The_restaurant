@@ -1,5 +1,6 @@
 package com.example.myapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -40,6 +41,9 @@ import com.squareup.picasso.Target;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 public class FoodList extends AppCompatActivity {
 
 
@@ -65,6 +69,12 @@ public class FoodList extends AppCompatActivity {
     //facebook share
     CallbackManager callbackManager;
     ShareDialog shareDialog;
+
+    //fonts
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
     //create target from picasso
     Target target=new Target() {
@@ -101,6 +111,10 @@ public class FoodList extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/restaurant_font.otf")
+                .setFontAttrId(R.attr.fontPath)
+                .build());
         setContentView(R.layout.activity_food_list);
 
 
@@ -315,7 +329,6 @@ public class FoodList extends AppCompatActivity {
                         Picasso.with(getApplicationContext())
                                 .load(model.getImage())
                                 .into(target);
-                        Log.v("toando", "index=");
                     }
                 });
 

@@ -1,15 +1,21 @@
 <resources>
     <string name="app_name">myapp</string>
-    <string name="title_activity_home">Home</string>
+    <string name="title_activity_home">Chào mừng bạn đến với The restaurant</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="slogan">AndroidEatIt</string>
-    <string name="title_activity_maps">Map</string>
-    <string name="facebook_app_id">2186646104760399</string>
-    <string name="facebook_login_protocol_name">fb2186646104760399</string>
+    <string name="action_settings">Cài đặt</string>
+    <string name="slogan">GR56_DevTeam</string>
+    <string name="loimodau1">   Đề tài “Ứng dụng đặt món dành riêng cho nhà hàng” của nhóm 56 – The Restaurant</string>
+    <string name="loimodau2">   Đây là một ứng dụng được xây dựng để giúp người dùng có thể dễ dàng đặt các món ăn ưa thích từ các quán ăn, các nhà hàng có sử dụng ứng dụng này mà mình mong muốn với phương châm đơn giản, hiệu quả.Người dùng sau khi tạo tài khoản cá nhân và đăng nhập thì có thể tiến hành xem menu các món ăn, và sau đó đặt món, người quản lí sẽ nhận xác nhận đơn đặt hàng và thống báo lại cho người đặt món để xác nhận, sau đó đơn hàng sẽ chuyển đến cho người đặt.</string>
+    <string name="loimodau3">   Bản quyền thuộc về Group56 – dưới sử hướng dẫn của thầy Đinh Kim Quốc Khải – Khoa Khoa học và Kĩ thuật máy tính – Đại học Bách Khoa – Đại học Quốc Gia TP.Hồ Chí Minh</string>
+    <string name="loimodau4">Mọi thắc mắc xin liên hệ đến</string>
+    <string name="loimodau5">" : tieulyngu98@gmail.com"</string>
+    <string name="loimodau6">" : 0766653542"</string>
+    <string name="title_activity_maps">Bản đồ</string>
+    <string name="facebook_app_id">2590815121203908</string>
+    <string name="facebook_login_protocol_name">fb2590815121203908</string>
 
 </resources>

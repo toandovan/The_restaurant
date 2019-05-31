@@ -30,23 +30,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="name_food"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
-           >
+            >
 
             <TextView
                 android:id="@+id/food_price"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:background="@android:color/white"
                 android:text="0$"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/btn_quick_cart"
