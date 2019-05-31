@@ -305,7 +305,6 @@ public class FoodList extends AppCompatActivity {
             @Override
             protected void populateViewHolder(FoodViewHolder viewHolder, final Food model, final int position) {
                 viewHolder.food_name.setText(model.getName());
-                viewHolder.food_price.setText(model.getPrice());
                 Picasso.with(getBaseContext()).load(model.getImage())
                       .into(viewHolder.food_image);
 
